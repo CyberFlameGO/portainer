@@ -10,7 +10,6 @@ import {
 } from '@/portainer/environments/types';
 import { EnvironmentGroupId } from '@/portainer/environment-groups/types';
 import { Button } from '@/portainer/components/Button';
-import { useIsAdmin } from '@/portainer/hooks/useUser';
 import {
   FilterSearchBar,
   useSearchBarState,
@@ -34,6 +33,7 @@ import {
 import { useGroups } from '@/portainer/environment-groups/queries';
 import { useTags } from '@/portainer/tags/queries';
 import { Filter } from '@/portainer/home/types';
+import { useUser } from '@/portainer/hooks/useUser';
 
 import { EnvironmentItem } from './EnvironmentItem';
 import { KubeconfigButton } from './KubeconfigButton';
@@ -74,7 +74,7 @@ const allEnvironmentType = [
 ];
 
 export function EnvironmentList({ onClickItem, onRefresh }: Props) {
-  const isAdmin = useIsAdmin();
+  const { isAdmin } = useUser();
 
   const [platformType, setPlatformType] = useHomePageFilter(
     'platformType',
