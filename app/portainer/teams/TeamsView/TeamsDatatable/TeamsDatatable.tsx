@@ -10,7 +10,6 @@ import {
 import { useMutation, useQueryClient } from 'react-query';
 
 import { notifySuccess } from '@/portainer/services/notifications';
-import { r2a } from '@/react-tools/react2angular';
 import { Checkbox } from '@/portainer/components/form-components/Checkbox';
 import { Table } from '@/portainer/components/datatables/components';
 import { Button } from '@/portainer/components/Button';
@@ -194,11 +193,6 @@ export function TeamsDatatableContainer(props: Props) {
     </TableSettingsProvider>
   );
 }
-
-export const TeamsDatatableAngular = r2a(TeamsDatatableContainer, [
-  'teams',
-  'isLoading',
-]);
 
 function useRemoveMutation() {
   const queryClient = useQueryClient();

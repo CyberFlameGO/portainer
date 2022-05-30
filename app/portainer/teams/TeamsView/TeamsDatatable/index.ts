@@ -1,1 +1,1 @@
-export { TeamsDatatable, TeamsDatatableAngular } from './TeamsDatatable';
+export { TeamsDatatable } from './TeamsDatatable';
